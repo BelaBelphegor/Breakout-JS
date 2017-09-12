@@ -8,11 +8,12 @@
 {
     width:100%;
     display:block;
+    margin: 0 auto;
 }
 
 #breakout-js
 {
     border:1px solid black;
-    width:1024px;
-    height:720px;
+    width:800px;
+    height:600px;
 }
