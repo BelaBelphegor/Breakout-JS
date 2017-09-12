@@ -1,10 +1,9 @@
 class Player
 {
-    constructor(game, x, y)
+    constructor(game, center)
     {
         this.c = game.c;
-        this.x = x;
-        this.y = y;
+        this.center = center;
         this.heigth = 20;
         this.width = 100;
         this.speed = 5;
@@ -15,21 +14,21 @@ class Player
     { 
         if (this.c.inputter.isDown(this.c.inputter.LEFT_ARROW))
 	    {
-            this.x = this.x - this.speed;
+            this.center.x = this.center.x - this.speed;
         }
         if (this.c.inputter.isDown(this.c.inputter.RIGHT_ARROW))
 	    {  
-		    this.x = this.x + this.speed;
+		    this.center.x = this.center.x + this.speed;
         }
-        if (this.x >= 800 - this.width)
-            this.x = 800 - this.width;
-        if (this.x <= 0)
-            this.x = 0;
+        if (this.center.x + this.width / 2 >= 800)
+            this.center.x = 800 - this.width / 2;
+        if (this.center.x <= this.width / 2)
+            this.center.x = this.width / 2;
     }
 
     draw(ctx)
     {
         ctx.fillStyle = "#F8EA50";
-	    ctx.fillRect(this.x, this.y, this.width, this.heigth);
+	    ctx.fillRect(this.center.x - this.width / 2, this.center.y - this.heigth / 2, this.width, this.heigth);
     }
 }
