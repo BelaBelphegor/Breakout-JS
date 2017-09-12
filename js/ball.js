@@ -23,6 +23,10 @@ class Ball
 		this.y += this.speed * this.dir_y;
 	}
 
+	collision(other)
+	{
+	}
+
 	draw(ctx)
 	{
 		ctx.fillStyle = "#F05BD5";
