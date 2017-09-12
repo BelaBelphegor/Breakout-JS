@@ -3,7 +3,7 @@ class Ball
 	// Ici on ecrit les bailles pour ajouter des attributs
 	constructor(x, y, size)
 	{
-		this.speed = 3;
+		this.speed = 5;
 		this.dir_x = -1;
 		this.dir_y = 1;
 		this.x = x;
@@ -13,9 +13,11 @@ class Ball
 
 	update()
 	{
-		if (this.x + this.speed * this.dir_x > 799 - this.size / 2 || this.x + this.speed * this.dir_x < 0 + this.size / 2)
+		if (this.x + this.speed * this.dir_x > 799 - this.size / 2 ||
+				this.x + this.speed * this.dir_x < 0 + this.size / 2)
 			this.dir_x *= -1;
-		if (this.y + this.speed * this.dir_y > 599 - this.size / 2 || this.y + this.speed * this.dir_y < 0 + this.size / 2)
+		if (this.y + this.speed * this.dir_y > 599 - this.size / 2 ||
+				this.y + this.speed * this.dir_y < 0 + this.size / 2)
 			this.dir_y *= -1;
 		this.x += this.speed * this.dir_x;
 		this.y += this.speed * this.dir_y;
